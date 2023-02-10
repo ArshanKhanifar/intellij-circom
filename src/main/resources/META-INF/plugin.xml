@@ -1,18 +1,31 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.arshankhanifar.intellijcircom</id>
-    <name>IntelliJ Platform Plugin intellij-circom</name>
+    <name>CIRCOM</name>
     <vendor>arshankhanifar</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Circom file"
+                  language="Circom"
+                  implementationClass="com.github.arshankhanifar.intellijcircom.lang.CircomFileType"
+                  extensions="circom"
+                  fieldName="INSTANCE"/>
+        <!--
+         // template stuff I don't yet get
+        // TODO: ask someone what this is
         <applicationService serviceImplementation="com.github.arshankhanifar.intellijcircom.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.arshankhanifar.intellijcircom.services.MyProjectService"/>
+         -->
     </extensions>
-
+    <!--
+     // template stuff I don't yet get
+     // TODO: ask someone what this is
     <applicationListeners>
         <listener class="com.github.arshankhanifar.intellijcircom.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+     -->
+
 </idea-plugin>

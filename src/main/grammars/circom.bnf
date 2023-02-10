@@ -1,0 +1,24 @@
+{
+  parserClass="com.github.arshankhanifar.intellijcircom.lang.CircomParser"
+
+  psiClassPrefix="Circom"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.github.arshankhanifar.intellijcircom.lang.psi"
+  psiImplPackage="com.github.arshankhanifar.intellijcircom.lang.psi.impl"
+  // implements="com.github.arshankhanifar.intellijcircom.lang.psi.CircomElement"
+
+  elementTypeHolderClass="com.github.arshankhanifar.intellijcircom.lang.psi.CircomTypes"
+  //elementTypePrefix=""
+  elementTypeClass="com.github.arshankhanifar.intellijcircom.lang.core.CircomElementType"
+  tokenTypeClass="com.github.arshankhanifar.intellijcircom.lang.core.CircomTokenType"
+
+  tokens=[]
+  //extends(".*Expression")=Expression
+  //extends(".*TypeName")=TypeName
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
